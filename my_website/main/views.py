@@ -5,13 +5,17 @@ from django.shortcuts import render
 
 def index(request):
     dict = {
-        'title': 'Home',
-        'content': 'Главная страница магазина - HOME',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_authenticated': True
+        'title': 'Home - Главная',
+        'content': 'Главная страница магазина - HOME'
+        
     }
     return render(request, "main/index.html", dict)
 
 def about(request):
-    return HttpResponse('About Page')
+    dict = {
+        'title': 'Home - О нас',
+        'content': 'О нас',
+        'text_on_page': "Текст о том почему этот магазин классный."
+        
+    }
+    return render(request, "main/about.html", dict)
